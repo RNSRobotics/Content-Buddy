@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Content Buddy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: white;
+}
+
+/* Top Navigation */
+nav {
+    background-color: #ff7a00;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+header h1 {
+    font-size: 40px;
+    color: #ff7a00;
+}
+
+/* Sections */
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* Buttons */
+.button {
+    background-color: #ff7a00;
+    color: white;
+    padding: 15px 25px;
+    margin: 10px;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: #e56700;
+}
+
+/* Slideshow */
+.slideshow-container {
+    max-width: 600px;
+    margin: auto;
+    position: relative;
+}
+
+.slide {
+    display: none;
+}
+
+.slide img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    padding: 20px;
+    text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="#commissions">Commissions</a>
+    <a href="#packages">Packages</a>
+    <a href="#support">Support</a>
+</nav>
+
+<header>
+    <h1>Content Buddy</h1>
+    <p>YouTube Ideas • Thumbnails • Titles • Channel Growth</p>
+</header>
+
+<!-- Portfolio Slideshow -->
+<section>
+    <h2>Portfolio</h2>
+    <div class="slideshow-container">
+        <div class="slide">
+            <img src="portfolio1.jpg" alt="Work 1">
+        </div>
+        <div class="slide">
+            <img src="portfolio2.jpg" alt="Work 2">
+        </div>
+        <div class="slide">
+            <img src="portfolio3.jpg" alt="Work 3">
+        </div>
+    </div>
+</section>
+
+<!-- Commissions -->
+<section id="commissions">
+    <h2>Commissions</h2>
+    <p>Order custom YouTube content help.</p>
+    <a class="button" href="YOUR_GOOGLE_FORM_LINK">Order Now</a>
+</section>
+
+<!-- Packages -->
+<section id="packages">
+    <h2>Packages</h2>
+    <p>Starter – $10/week</p>
+    <p>Growth – $20/week</p>
+    <p>Pro – $35/week</p>
+
+    <!-- Replace these with your PayPal links -->
+    <a class="button" href="PAYPAL_STARTER_LINK">Starter</a>
+    <a class="button" href="PAYPAL_GROWTH_LINK">Growth</a>
+    <a class="button" href="PAYPAL_PRO_LINK">Pro</a>
+</section>
+
+<!-- Support -->
+<section id="support">
+    <h2>Support</h2>
+    <p>Email: yourbusiness@email.com</p>
+    <p>Discord: YourUsername</p>
+</section>
+
+<footer>
+    <p>© 2026 Content Buddy</p>
+</footer>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let slides = document.getElementsByClassName("slide");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex-1].style.display = "block";
+    setTimeout(showSlides, 2500);
+}
+</script>
+
+</body>
+</html>
