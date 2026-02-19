@@ -1,74 +1,184 @@
-<!-- Portfolio Slideshow with Commissions Pricing -->
-<section style="position:relative; padding:50px; text-align:center; background:#111; color:white;">
-    <h2 style="color:#ff7a00;">Portfolio</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Content Buddy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* Reset */
+body, html {margin:0; padding:0; font-family: Arial, sans-serif; background:#111; color:white;}
 
+/* Navbar */
+nav {
+    background:#ff7a00;
+    padding:12px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:10;
+}
+nav a {
+    color:white;
+    margin:0 15px;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:16px;
+}
+nav a:hover {text-decoration:underline;}
+
+/* Header */
+header {
+    text-align:center;
+    padding:50px 20px;
+}
+header h1 {font-size:40px; color:#ff7a00;}
+header p {font-size:18px;}
+
+/* Section Titles */
+section h2 {color:#ff7a00; margin-bottom:20px;}
+
+/* Buttons */
+.button {
+    background:#ff7a00;
+    color:white;
+    padding:10px 20px;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:6px;
+    display:inline-block;
+    margin:10px 5px;
+}
+.button:hover {background:#e56700;}
+
+/* Portfolio Slideshow */
+.slideshow-container {
+    max-width:400px; /* shrunk by ~50% */
+    margin:auto;
+    position:relative;
+}
+.slide {
+    display:none;
+}
+.slide img {
+    width:100%;
+    height:auto;
+    border-radius:10px;
+}
+
+/* Commissions Price Chart (in Portfolio corner) */
+.commissions-chart {
+    position:absolute;
+    top:10px;
+    right:10px;
+    background:#222;
+    padding:12px;
+    border-radius:8px;
+    font-size:13px;
+    width:140px;
+    text-align:left;
+    box-shadow:0 0 8px #000;
+}
+.commissions-chart h4 {color:#ff7a00; margin:0 0 5px 0;}
+.commissions-chart ul {list-style:none; padding:0; margin:0;}
+
+/* Sections */
+section {padding:40px 20px; text-align:center;}
+
+/* Footer */
+footer {background:#222; padding:20px; text-align:center; font-size:14px;}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+    <a href="#commissions">Commissions</a>
+    <a href="#packages">Packages</a>
+    <a href="#support">Support</a>
+</nav>
+
+<!-- Header -->
+<header>
+    <h1>Content Buddy</h1>
+    <p>Video Ideas • Titles • Thumbnails • Scripts • Small Creator Growth</p>
+</header>
+
+<!-- Portfolio Section -->
+<section id="portfolio" style="position:relative;">
+    <h2>Portfolio</h2>
+    
     <!-- Slideshow -->
-    <div class="slideshow-container" style="max-width:700px; margin:auto;">
-
+    <div class="slideshow-container">
         <div class="slide">
-            <img src="Portfolia.jpg" style="width:100%; border-radius:10px;">
+            <img src="Portfolia.jpg" alt="Portfolio 1">
         </div>
-
         <div class="slide">
-            <img src="Portfolio2.jpg" style="width:100%; border-radius:10px;">
+            <img src="Portfolio2.jpg" alt="Portfolio 2">
         </div>
-
         <div class="slide">
-            <img src="portfoli3.jpg" style="width:100%; border-radius:10px;">
+            <img src="portfoli3.jpg" alt="Portfolio 3">
         </div>
-
         <div class="slide">
-            <img src="channels4_profile.jpg" style="width:100%; border-radius:10px;">
+            <img src="channels4_profile.jpg" alt="Portfolio 4">
         </div>
-
     </div>
 
-    <!-- Small Commissions Price Chart -->
-    <div style="
-        position:absolute;
-        top:10px;
-        right:10px;
-        background:#222;
-        padding:15px;
-        border-radius:10px;
-        font-size:14px;
-        width:140px;
-        text-align:left;
-        box-shadow: 0 0 10px #000;
-    ">
-        <h4 style="color:#ff7a00; margin:0 0 5px 0;">Commissions</h4>
-        <ul style="list-style:none; padding:0; margin:0;">
+    <!-- Commissions Price Chart -->
+    <div class="commissions-chart">
+        <h4>Commissions</h4>
+        <ul>
             <li>PFP: $2</li>
             <li>Thumbnail: $3</li>
             <li>Editing: $10-20 AUD*</li>
         </ul>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdc5hWESTT9kPqVP39rJyaEiZd7vGuP0l3yhRe3vUuVxXoK0g/viewform?usp=publish-editor" 
-           style="
-               display:block;
-               margin-top:10px;
-               background:#ff7a00;
-               color:white;
-               padding:8px;
-               text-decoration:none;
-               text-align:center;
-               border-radius:6px;
-               font-weight:bold;
-           ">Order Now</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdc5hWESTT9kPqVP39rJyaEiZd7vGuP0l3yhRe3vUuVxXoK0g/viewform?usp=publish-editor" class="button">Order Now</a>
     </div>
 </section>
 
-<script>
-let slideIndex = 0;
-showSlides();
+<!-- Commissions Section (extra info if needed) -->
+<section id="commissions">
+    <h2>Commissions</h2>
+    <p>Click the button below to submit your order.</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdc5hWESTT9kPqVP39rJyaEiZd7vGuP0l3yhRe3vUuVxXoK0g/viewform?usp=publish-editor" class="button">Order Now</a>
+</section>
 
-function showSlides() {
-    let slides = document.getElementsByClassName("slide");
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
+<!-- Packages Section -->
+<section id="packages">
+    <h2>Packages</h2>
+    <p>Starter: $10/week — 5 ideas + titles</p>
+    <p>Growth: $20/week — 10 ideas + thumbnails</p>
+    <p>Pro: $35/week — Full package + scripts</p>
+    <!-- Replace links with PayPal buttons later -->
+    <a href="#" class="button">Starter</a>
+    <a href="#" class="button">Growth</a>
+    <a href="#" class="button">Pro</a>
+</section>
+
+<!-- Support Section -->
+<section id="support">
+    <h2>Support</h2>
+    <p>Email: yourbusiness@email.com</p>
+    <p>Discord: YourUsername</p>
+</section>
+
+<!-- Footer -->
+<footer>
+    © 2026 Content Buddy
+</footer>
+
+<!-- Slideshow Script -->
+<script>
+let slideIndex=0;
+showSlides();
+function showSlides(){
+    let slides=document.getElementsByClassName("slide");
+    for(let i=0;i<slides.length;i++){slides[i].style.display="none";}
     slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1;}
-    slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 2500); // changes image every 2.5 seconds
+    if(slideIndex>slides.length){slideIndex=1;}
+    slides[slideIndex-1].style.display="block";
+    setTimeout(showSlides,2500);
 }
 </script>
+
+</body>
+</html>
