@@ -52,12 +52,13 @@ section h2 {color:#ff7a00; margin-bottom:20px;}
 
 /* Portfolio Slideshow */
 .slideshow-container {
-    max-width:400px; /* shrunk by ~50% */
+    max-width:400px; /* Shrunk size */
     margin:auto;
     position:relative;
 }
 .slide {
     display:none;
+    cursor:pointer;
 }
 .slide img {
     width:100%;
@@ -65,7 +66,26 @@ section h2 {color:#ff7a00; margin-bottom:20px;}
     border-radius:10px;
 }
 
-/* Commissions Price Chart (in Portfolio corner) */
+/* Lightbox */
+#lightbox-overlay {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.9);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:100;
+}
+#lightbox-overlay img {
+    max-width:90%;
+    max-height:90%;
+    border-radius:10px;
+}
+
+/* Commissions Price Chart */
 .commissions-chart {
     position:absolute;
     top:10px;
@@ -106,7 +126,7 @@ footer {background:#222; padding:20px; text-align:center; font-size:14px;}
 <!-- Portfolio Section -->
 <section id="portfolio" style="position:relative;">
     <h2>Portfolio</h2>
-    
+
     <!-- Slideshow -->
     <div class="slideshow-container">
         <div class="slide">
@@ -119,7 +139,7 @@ footer {background:#222; padding:20px; text-align:center; font-size:14px;}
             <img src="portfoli3.jpg" alt="Portfolio 3">
         </div>
         <div class="slide">
-            <img src="channels4_profile.jpg" alt="Portfolio 4">
+            <img src="channels4_profile.jpg" alt="Portfolio 4" style="width:50%;">
         </div>
     </div>
 
@@ -135,7 +155,7 @@ footer {background:#222; padding:20px; text-align:center; font-size:14px;}
     </div>
 </section>
 
-<!-- Commissions Section (extra info if needed) -->
+<!-- Commissions Section (Optional Extra Info) -->
 <section id="commissions">
     <h2>Commissions</h2>
     <p>Click the button below to submit your order.</p>
@@ -148,7 +168,6 @@ footer {background:#222; padding:20px; text-align:center; font-size:14px;}
     <p>Starter: $10/week — 5 ideas + titles</p>
     <p>Growth: $20/week — 10 ideas + thumbnails</p>
     <p>Pro: $35/week — Full package + scripts</p>
-    <!-- Replace links with PayPal buttons later -->
     <a href="#" class="button">Starter</a>
     <a href="#" class="button">Growth</a>
     <a href="#" class="button">Pro</a>
@@ -170,6 +189,7 @@ footer {background:#222; padding:20px; text-align:center; font-size:14px;}
 <script>
 let slideIndex=0;
 showSlides();
+
 function showSlides(){
     let slides=document.getElementsByClassName("slide");
     for(let i=0;i<slides.length;i++){slides[i].style.display="none";}
@@ -178,6 +198,20 @@ function showSlides(){
     slides[slideIndex-1].style.display="block";
     setTimeout(showSlides,2500);
 }
+
+/* Lightbox for clicking images */
+const slides = document.querySelectorAll('.slide img');
+const overlay = document.createElement('div');
+overlay.id = 'lightbox-overlay';
+overlay.innerHTML = '<img src="" alt="Full Portfolio">';
+document.body.appendChild(overlay);
+slides.forEach(img => {
+    img.addEventListener('click', ()=>{
+        overlay.style.display='flex';
+        overlay.querySelector('img').src = img.src;
+    });
+});
+overlay.addEventListener('click', ()=>{overlay.style.display='none';});
 </script>
 
 </body>
